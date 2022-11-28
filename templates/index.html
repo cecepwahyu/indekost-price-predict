@@ -8,6 +8,7 @@
             href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
             rel="stylesheet"
         />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <title>Aplikasi Prediksi Harga Indekos</title>
     </head>
     <body
@@ -41,22 +42,19 @@
                     <option value="1">Putra</option>
                     <option value="2">Putri</option>
                 </select>
-                <label for="Kecamatan" class="mb-2">Kecamatan</label>
-                <input
-                    type="int"
-                    name="Kecamatan"
-                    placeholder=""
-                    required="required"
-                    class="p-4 bg-gray-100 rounded-md"
-                />
                 <label for="Kota" class="mb-2">Kota</label>
-                <input
-                    type="float"
-                    name="Kota"
-                    placeholder=""
-                    required="required"
-                    class="p-4 bg-gray-100 rounded-md"
-                />
+                <select id="dpdlCountry" name="Kota" required="required" class="p-4 bg-gray-100 rounded-md">
+                    <option selected>Pilih Kota</option>
+                    <option value="0">Bantul</option>
+                    <option value="1">Gunungkidul</option>
+                    <option value="2">Kota Jogja</option>
+                    <option value="3">Kulonprogo</option>
+                    <option value="4">Sleman</option>
+                </select>
+                <label for="Kecamatan" class="mb-2">Kecamatan</label>
+                <select id="dpdlState" name="Kecamatan" required="required" class="p-4 bg-gray-100 rounded-md">
+                    <option selected>Pilih Kecamatan</option>
+                  </select>
                 <label for="Kmandi" class="mb-2">Kamar Mandi</label>
                 <select id="underline_select" name="Kmandi" required="required" class="p-4 bg-gray-100 rounded-md">
                     <option selected>Pilih tipe kamar mandi</option>
@@ -204,5 +202,83 @@
                 {% endif %}
             </div>
         </section>
+        <script>
+
+            var stateList = [
+              { Country: '0', State: 'Banguntapan' },
+              { Country: '0', State: 'Bantul' },
+              { Country: '0', State: 'Kasihan' },
+              { Country: '0', State: 'Sewon' },
+              { Country: '1', State: 'Wonosari' },
+              { Country: '2', State: 'Danurejan' },
+              { Country: '2', State: 'Gedong Tengen' },
+              { Country: '2', State: 'Gondokusuman' },
+              { Country: '2', State: 'Gondomanan' },
+              { Country: '2', State: 'Jetis' },
+              { Country: '2', State: 'Kotagede' },
+              { Country: '2', State: 'Kraton' },
+              { Country: '2', State: 'Mantrijeron' },
+              { Country: '2', State: 'Mergangsan' },
+              { Country: '2', State: 'Pakualaman' },
+              { Country: '2', State: 'Tegalrejo' },
+              { Country: '3', State: 'Pengasih' },
+              { Country: '3', State: 'Temon' },
+              { Country: '3', State: 'Wates' },
+              { Country: '4', State: 'Berbah' },
+              { Country: '4', State: 'Depok' },
+              { Country: '4', State: 'Gamping' },
+              { Country: '4', State: 'Godean' },
+              { Country: '4', State: 'Kalasan' },
+              { Country: '4', State: 'Mlati' },
+              { Country: '4', State: 'Ngaglik' },
+              { Country: '4', State: 'Ngemplak' },
+              { Country: '4', State: 'Pakem' },
+              { Country: '4', State: 'Sleman' }
+            ];
+            $(document).ready(function () {
+              debugger;
+              $(".divOtherCountry").hide();
+              $(".divOtherState").hide();
+              $(".divOtherCity").hide();
+              $("#dpdlCountry").change(function () {
+                debugger;
+                if ($("#dpdlCountry").val() == "Other") {
+                  $(".divOtherCountry").show();
+                  const option = "<option val='Other'>Other</option>";
+                  $("#dpdlState").append(option);
+                } else {
+                  $(".divOtherCountry").hide();
+                  $(".divOtherState").hide();
+                  $(".divOtherCity").hide();
+                  $("#dpdlState").html("<option selected>Choose State</option>");
+                  $("#dpdlCity").html("<option selected>Choose City</option>");
+                  const states = stateList.filter(m => m.Country == $("#dpdlCountry").val() || m.Country == "Other");
+                  states.forEach(element => {
+                    const option = "<option val='" + element.State + "'>" + element.State + "</option>";
+                    $("#dpdlState").append(option);
+                  });
+                }
+              });
+        
+              $("#dpdlState").change(function () {
+                debugger;
+                if ($("#dpdlState").val() == "Other") {
+                  $(".divOtherState").show();
+                  const option = "<option val='Other'>Other</option>";
+                  $("#dpdlCity").append(option);
+                } else {
+                  $(".divOtherState").hide();
+                  $(".divOtherCity").hide();
+                  $("#dpdlCity").html("<option selected>Choose City</option>");
+                  debugger;
+                  const states = cityList.filter(m => m.State == $("#dpdlState").val() || m.State == "Other");
+                  states.forEach(element => {
+                    const option = "<option val='" + element.city + "'>" + element.city + "</option>";
+                    $("#dpdlCity").append(option);
+                  });
+                }
+              });
+            });
+          </script>
     </body>
 </html>
