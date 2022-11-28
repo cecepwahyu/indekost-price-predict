@@ -35,13 +35,12 @@
                 class="flex flex-col"
             >
                 <label for="Jenis_Kos" class="mb-2">Jenis_Kos</label>
-                <input
-                    type="int"
-                    name="Jenis_Kos"
-                    placeholder=""
-                    required="required"
-                    class="p-4 bg-gray-100 rounded-md"
-                />
+                <select id="underline_select" name="Jenis_Kos" required="required" class="p-4 bg-gray-100 rounded-md">
+                    <option selected>Pilih tipe indekos</option>
+                    <option value="0">Campur</option>
+                    <option value="1">Putra</option>
+                    <option value="2">Putri</option>
+                </select>
                 <label for="Kecamatan" class="mb-2">Kecamatan</label>
                 <input
                     type="int"
@@ -199,7 +198,7 @@
                 <h1 class="text-3xl mb-8">
                     <b>Prediksi Harga Indekos dengan metode Random Forest Classifier:</b>
                 </h1>
-                <h2 class="text-5xl font-bold">Harga Prediksi Rp. {{ Harga }}             
+                <h2 class="text-5xl font-bold">Harga Prediksi ("Rp. " {{ Harga }})             
                 </h2>
                 <div class="mt-8">
                 
