@@ -199,7 +199,7 @@
                 <h1 class="text-3xl mb-8">
                     <b>Prediksi Harga Indekos dengan metode Random Forest Classifier:</b>
                 </h1>
-                <h2 class="text-5xl font-bold">Harga Prediksi ({{ Harga }})             
+                <h2 class="text-5xl font-bold">Harga Prediksi ("Rp. " {{ Harga }})             
                 </h2>
                 <div class="mt-8">
                 
@@ -207,6 +207,7 @@
                 {% if ( Harga ) != 0 %}
                 <div class="mt-8">
                     <b>Detail Spesifikasi Kos Anda:</b>
+                    <p><b>Jenis_Kos:</b> {{ Jenis_Kos }} </p>
                     <p><b>Kecamatan:</b> {{ Kecamatan }} </p>
                     <p><b>Kota:</b> {{ Kota }} </p>
                     <p><b>Kmandi:</b> {{ Kmandi }} </p>
