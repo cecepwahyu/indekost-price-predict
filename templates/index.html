@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+            rel="stylesheet"
+        />
+        <title>Aplikasi Prediksi Harga Indekos</title>
+    </head>
+    <body
+        class="
+            flex flex-col
+            justify-between
+            item-center
+            p-8
+            min-h-screen
+            bg-gradient-to-r
+            from-green-400
+            to-blue-500
+            text-gray-800
+            md:flex-row
+        "
+    >
+        <main class="bg-white p-16 rounded-lg">
+            <h1 class="text-3xl font-bold mb-8">
+                Masukkan Preferensi Kos Anda:
+            </h1>
+
+            <form
+                action="{{ url_for('predict') }}"
+                method="post"
+                class="flex flex-col"
+            >
+                <label for="Kecamatan" class="mb-2">Kecamatan</label>
+                <input
+                    type="int"
+                    name="Kecamatan"
+                    placeholder=""
+                    required="required"
+                    class="p-4 bg-gray-100 rounded-md"
+                />
+                <label for="Kota" class="mb-2">Kota</label>
+                <input
+                    type="float"
+                    name="Kota"
+                    placeholder=""
+                    required="required"
+                    class="p-4 bg-gray-100 rounded-md"
+                />
+                <label for="Kmandi" class="mb-2">Kmandi</label>
+                <input
+                    type="int"
+                    name="Kmandi"
+                    placeholder=""
+                    required="required"
+                    class="p-4 bg-gray-100 rounded-md"
+                />
+                <label for="WIFI" class="mb-2">WIFI</label>
+                <input
+                    type="float"
+                    name="WIFI"
+                    placeholder=""
+                    required="required"
+                    class="p-4 bg-gray-100 rounded-md"
+                />
+                <label for="AC" class="mb-2">AC</label>
+                <input
+                    type="float"
+                    name="AC"
+                    placeholder=""
+                    required="required"
+                    class="p-4 bg-gray-100 rounded-md"
+                />
+                <label for="Kloset" class="mb-2">Kloset</label>
+                <input
+                    type="float"
+                    name="Kloset"
+                    placeholder=""
+                    required="required"
+                    class="p-4 bg-gray-100 rounded-md"
+                />
+                <label for="Kasur" class="mb-2">Kasur</label>
+                <input
+                    type="float"
+                    name="Kasur"
+                    placeholder=""
+                    required="required"
+                    class="p-4 bg-gray-100 rounded-md"
+                />
+                <label for="Akses24" class="mb-2">Akses24</label>
+                <input
+                    type="float"
+                    name="Akses24"
+                    placeholder=""
+                    required="required"
+                    class="p-4 bg-gray-100 rounded-md"
+                />
+                <label for="Luas" class="mb-2">Luas</label>
+                <input
+                    type="float"
+                    name="Luas"
+                    placeholder=""
+                    required="required"
+                    class="p-4 bg-gray-100 rounded-md"
+                />
+
+                <label for="Listrik" class="mb-2">Listrik</label>
+                <input
+                    type="float"
+                    name="Listrik"
+                    placeholder=""
+                    required="required"
+                    class="p-4 bg-gray-100 rounded-md"
+                />
+
+                <label for="Dapur" class="mb-2">Dapur</label>
+                <input
+                    type="float"
+                    name="Dapur"
+                    placeholder=""
+                    required="required"
+                    class="p-4 bg-gray-100 rounded-md"
+                />
+
+                <label for="CCTV" class="mb-2">CCTV</label>
+                <input
+                    type="float"
+                    name="CCTV"
+                    placeholder=""
+                    required="required"
+                    class="p-4 bg-gray-100 rounded-md"
+                />
+
+                <label for="Kulkas" class="mb-2">Kulkas</label>
+                <input
+                    type="float"
+                    name="Kulkas"
+                    placeholder=""
+                    required="required"
+                    class="p-4 bg-gray-100 rounded-md"
+                />
+
+                <label for="Lemari" class="mb-2">Lemari</label>
+                <input
+                    type="float"
+                    name="Lemari"
+                    placeholder=""
+                    required="required"
+                    class="p-4 bg-gray-100 rounded-md"
+                />
+
+                <button
+                    type="submit"
+                    class="
+                        flex
+                        justify-center
+                        align-center
+                        mt-8
+                        p-4
+                        bg-gradient-to-r
+                        from-green-400
+                        to-blue-500
+                        text-white
+                        rounded-md
+                    "
+                >
+                    PROSES ESTIMASI SEKARANG
+                    <svg
+                        xlmns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-arrow-right ml-4"
+                    >
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+            </form>
+        </main>
+        <section class="mt-8 h-full flex-auto rounded-lg md:mt-0 md:ml-8">
+            <div class="bg-white p-16 rounded-lg">
+                <h1 class="text-3xl mb-8">
+                    <b>Prediksi Harga Indekos dengan metode Random Forest Classifier:</b>
+                </h1>
+                <h2 class="text-5xl font-bold">Harga Prediksi ({{ Harga }})             
+                </h2>
+                <div class="mt-8">
+                
+                </div>
+                {% if ( Harga ) != 0 %}
+                <div class="mt-8">
+                    <b>Detail Spesifikasi Kos Anda:</b>
+                    <p><b>Kecamatan:</b> {{ Kecamatan }} </p>
+                    <p><b>Kota:</b> {{ Kota }} </p>
+                    <p><b>Kmandi:</b> {{ Kmandi }} </p>
+                    <p><b>WIFI:</b> {{ WIFI }} </p>
+                    <p><b>AC:</b> {{ AC }} </p>
+                    <p><b>Kloset:</b> {{ Kloset }} </p>
+                    <p><b>Kasur:</b> {{ Kasur }} </p>
+                    <p><b>Akses24:</b> {{ Akses24 }} </p>
+                    <p><b>Luas:</b> {{ Luas }} </p>
+                    <p><b>Listrik:</b> {{ Listrik }} </p>
+                    <p><b>Dapur:</b> {{ Dapur }} </p>
+                    <p><b>CCTV:</b> {{ CCTV }} </p>
+                    <p><b>Kulkas:</b> {{ Kulkas }} </p>
+                    <p><b>Lemari:</b> {{ Lemari }} </p>
+
+                </div>
+                {% endif %}
+            </div>
+        </section>
+    </body>
+</html>
