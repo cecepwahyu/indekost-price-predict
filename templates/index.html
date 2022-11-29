@@ -97,13 +97,33 @@
                     <option value="1">Ya</option>
                 </select>
                 <label for="Luas" class="mb-2">Luas</label>
-                <input
-                    type="float"
-                    name="Luas"
-                    placeholder=""
-                    required="required"
-                    class="p-4 bg-gray-100 rounded-md"
-                />
+                <select id="underline_select" name="Luas" required="required" class="p-4 bg-gray-100 rounded-md">
+                    <option selected>Pilih luas kamar</option>
+                    <option value="0">2x2 meter</option>
+                    <option value="1">2x3 meter</option>
+                    <option value="2">2x4 meter</option>
+                    <option value="3">2x5 meter</option>
+                    <option value="4">2x7 meter</option>
+                    <option value="5">3x3 meter</option>
+                    <option value="6">3x4 meter</option>
+                    <option value="7">3x5 meter</option>
+                    <option value="8">3x6 meter</option>
+                    <option value="9">3x7 meter</option>
+                    <option value="10">3x8 meter</option>
+                    <option value="11">3x9 meter</option>
+                    <option value="13">4x4 meter</option>
+                    <option value="14">4x5 meter</option>
+                    <option value="15">4x6 meter</option>
+                    <option value="16">4x7 meter</option>
+                    <option value="17">4x8 meter</option>
+                    <option value="12">4x10 meter</option>
+                    <option value="18">5x5 meter</option>
+                    <option value="19">5x6 meter</option>
+                    <option value="20">5x7 meter</option>
+                    <option value="21">5x8 meter</option>
+                    <option value="22">6x6 meter</option>
+                    <option value="23">6x8 meter</option>
+                </select>
 
                 <label for="Listrik" class="mb-2">Listrik</label>
                 <select id="underline_select" name="Listrik" required="required" class="p-4 bg-gray-100 rounded-md">
@@ -211,34 +231,36 @@
 
             var stateList = [
               { Country: '0', State: 'Banguntapan', Palue: '0' },
-              { Country: '0', State: 'Bantul' },
-              { Country: '0', State: 'Kasihan' },
-              { Country: '0', State: 'Sewon' },
-              { Country: '1', State: 'Wonosari' },
-              { Country: '2', State: 'Danurejan' },
-              { Country: '2', State: 'Gedong Tengen' },
-              { Country: '2', State: 'Gondokusuman' },
-              { Country: '2', State: 'Gondomanan' },
-              { Country: '2', State: 'Jetis' },
-              { Country: '2', State: 'Kotagede' },
-              { Country: '2', State: 'Kraton' },
-              { Country: '2', State: 'Mantrijeron' },
-              { Country: '2', State: 'Mergangsan' },
-              { Country: '2', State: 'Pakualaman' },
-              { Country: '2', State: 'Tegalrejo' },
-              { Country: '3', State: 'Pengasih' },
-              { Country: '3', State: 'Temon' },
-              { Country: '3', State: 'Wates' },
-              { Country: '4', State: 'Berbah' },
-              { Country: '4', State: 'Depok' },
-              { Country: '4', State: 'Gamping' },
-              { Country: '4', State: 'Godean' },
-              { Country: '4', State: 'Kalasan' },
-              { Country: '4', State: 'Mlati' },
-              { Country: '4', State: 'Ngaglik' },
-              { Country: '4', State: 'Ngemplak' },
-              { Country: '4', State: 'Pakem' },
-              { Country: '4', State: 'Sleman' }
+              { Country: '0', State: 'Bantul', Palue: '1' },
+              { Country: '0', State: 'Kasihan', Palue: '12' },
+              { Country: '0', State: 'Sewon', Palue: '24' },
+              { Country: '1', State: 'Wonosari', Palue: '31' },
+              { Country: '2', State: 'Danurejan', Palue: '3' },
+              { Country: '2', State: 'Gedong Tengen', Palue: '6' },
+              { Country: '2', State: 'Gondokusuman', Palue: '8' },
+              { Country: '2', State: 'Gondomanan', Palue: '9' },
+              { Country: '2', State: 'Jetis', Palue: '10' },
+              { Country: '2', State: 'Kotagede', Palue: '13' },
+              { Country: '2', State: 'Kraton', Palue: '14' },
+              { Country: '2', State: 'Mantrijeron', Palue: '15' },
+              { Country: '2', State: 'Mergangsan', Palue: '16' },
+              { Country: '2', State: 'Ngampilan', Palue: '19' },
+              { Country: '2', State: 'Pakualaman', Palue: '22' },
+              { Country: '2', State: 'Tegalrejo', Palue: '26' },
+              { Country: '2', State: 'Wirobrajan', Palue: '30' },
+              { Country: '3', State: 'Pengasih', Palue: '23' },
+              { Country: '3', State: 'Temon', Palue: '27' },
+              { Country: '3', State: 'Wates', Palue: '29' },
+              { Country: '4', State: 'Berbah', Palue: '2' },
+              { Country: '4', State: 'Depok', Palue: '4' },
+              { Country: '4', State: 'Gamping', Palue: '5' },
+              { Country: '4', State: 'Godean', Palue: '7' },
+              { Country: '4', State: 'Kalasan', Palue: '11' },
+              { Country: '4', State: 'Mlati', Palue: '17' },
+              { Country: '4', State: 'Ngaglik', Palue: '18' },
+              { Country: '4', State: 'Ngemplak', Palue: '20' },
+              { Country: '4', State: 'Pakem', Palue: '21' },
+              { Country: '4', State: 'Sleman', Palue: '25' }
             ];
             $(document).ready(function () {
               debugger;
