@@ -259,7 +259,7 @@
                   $("#dpdlCity").html("<option selected>Choose City</option>");
                   const states = stateList.filter(m => m.Country == $("#dpdlCountry").val() || m.Country == "Other");
                   states.forEach(element => {
-                    const option = "<option val='" + element.Palue + "'>" + element.State + "</option>";
+                    const option = "<option value='" + element.Palue + "'>" + element.State + "</option>";
                     $("#dpdlState").append(option);
                   });
                 }
