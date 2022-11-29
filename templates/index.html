@@ -35,7 +35,7 @@
                 method="post"
                 class="flex flex-col"
             >
-                <label for="Jenis_Kos" class="mb-2">Jenis_Kos</label>
+                <label for="Jenis_Kos" class="mb-2"><b>Jenis Kos</b></label>
                 <select id="underline_select" name="Jenis_Kos" required="required" class="p-4 bg-gray-100 rounded-md">
                     <option selected>Pilih tipe indekos</option>
                     <option value="0">Campur</option>
@@ -210,7 +210,7 @@
         <script>
 
             var stateList = [
-              { Country: '0', State: 'Banguntapan' },
+              { Country: '0', State: 'Banguntapan', Palue: '0' },
               { Country: '0', State: 'Bantul' },
               { Country: '0', State: 'Kasihan' },
               { Country: '0', State: 'Sewon' },
@@ -259,7 +259,7 @@
                   $("#dpdlCity").html("<option selected>Choose City</option>");
                   const states = stateList.filter(m => m.Country == $("#dpdlCountry").val() || m.Country == "Other");
                   states.forEach(element => {
-                    const option = "<option val='" + element.State + "'>" + element.State + "</option>";
+                    const option = "<option val='" + element.Palue + "'>" + element.State + "</option>";
                     $("#dpdlState").append(option);
                   });
                 }
