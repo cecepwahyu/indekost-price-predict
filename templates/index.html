@@ -155,6 +155,13 @@
                     <option value="0">Tidak Ada</option>
                     <option value="1">Ada</option>
                 </select>
+                
+                <label for="Mesin Cuci" class="mb-2"><b>Lemari</b></label>
+                <select id="underline_select" name="Lemari" class="p-4 bg-gray-100 rounded-md" required>
+                    <option selected value="">Pilih tipe Lemari</option>
+                    <option value="0">Tidak Ada</option>
+                    <option value="1">Ada</option>
+                </select>
 
                 <button
                     type="submit"
@@ -218,6 +225,7 @@
                     <p><b>CCTV:</b> {{ CCTV }} </p>
                     <p><b>Kulkas:</b> {{ Kulkas }} </p>
                     <p><b>Lemari:</b> {{ Lemari }} </p>
+                    <p><b>Mesin Cuci:</b> {{ MesinCuci }} </p>
 
                 </div>
                 {% endif %}
